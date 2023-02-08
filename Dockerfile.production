@@ -1,0 +1,15 @@
+FROM node:16-alpine
+
+
+WORKDIR /usr/src/app
+
+COPY ./ ./
+
+RUN npm install --production
+RUN npx prisma generate
+RUN npm run build
+RUN npx tailwindcss init -p
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

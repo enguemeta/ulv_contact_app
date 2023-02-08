@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  app:
+    image: enguemeta/glo_3202_contact_app
+    ports:
+      - 3000:3000
